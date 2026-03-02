@@ -1,0 +1,686 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478815Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-724042-3206",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478850Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-258492-3802",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478859Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-791631-1676",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478864Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-490467-9164",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478870Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-710274-9635",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478875Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-643103-9226",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478880Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-968960-4167",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478885Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-611699-8291",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478889Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-111898-3762",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478894Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-615694-3140",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478902Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-732249-2142",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478907Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-671993-1386",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478911Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-328470-5803",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478916Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-719882-4900",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478920Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-787810-9800",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478925Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-893190-5461",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478929Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-466116-5791",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478934Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-332523-6546",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478939Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-478562-6244",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478944Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-472851-4959",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478949Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-852080-2471",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478954Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-949387-3235",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478959Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-569253-7353",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478964Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-126357-2580",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "readOnly": true,
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "userName": null
+      },
+      "eventTime": "2026-03-02T16:12:49.478968Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.42",
+      "userAgent": [
+        "aws-cli/2.15.30 Python/3.11.6 Linux/5.4.0-1107-aws exe/x86_64.ubuntu.20 prompt/off"
+      ],
+      "eventID": "fake-691250-3107",
+      "eventType": "AwsApiCall",
+      "eventCategory": "Management",
+      "managementEvent": true,
+      "recipientAccountId": "123456789012",
+      "resources": [],
+      "requestParameters": null,
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied"
+    }
+  ]
+}
