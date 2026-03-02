@@ -1,0 +1,30 @@
+# Database files
+*.db
+corpus.db
+
+# Report files
+*.csv
+report.csv
+validation_report.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Test data
+refs/
+*.json
+*.json.gz
+!example*.json
