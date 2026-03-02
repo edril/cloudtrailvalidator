@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>CloudTrail log file examples - AWS CloudTrail</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="cloudtrail-log-file-examples" /><meta name="default_state" content="cloudtrail-log-file-examples" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" /><meta name="description" content="This page describes the structure of a CloudTrail log file and shows snippets of logs that show the record for an action." /><meta name="deployment_region" content="IAD" /><meta name="product" content="AWS CloudTrail" /><meta name="guide" content="User Guide" /><meta name="abstract" content="Get a history of actions taken by a user, role, or an AWS service account with AWS CloudTrail." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" hreflang="x-default" /><meta name="feedback-item" content="CloudTrail" /><meta name="this_doc_product" content="AWS CloudTrail" /><meta name="this_doc_guide" content="User Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'cloudtrail'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="CloudTrail log file examples" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>CloudTrail log file examples - AWS CloudTrail</title><meta name="pdf" content="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#cloudtrail-log-file-examples" /><meta name="rss" content="aws-cloudtrail-document-history.rss" /><meta name="forums" content="https://repost.aws/tags/TAVySJwCMbS4ydy4hjQ7rI8w" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html" /><meta name="keywords" content="CloudTrail,Trail,CloudTrail Lake,CloudTrail event history,CloudTrail log files,trail logs,CloudTrail log examples,CloudTrail event examples" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "AWS CloudTrail",
+        "item" : "https://docs.aws.amazon.com/cloudtrail/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Working with CloudTrail log files",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-working-with-log-files.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "CloudTrail log file examples",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-working-with-log-files.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#cloudtrail-log-file-examples" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/cloudtrail/index.html">AWS CloudTrail</a><a href="cloudtrail-user-guide.html">User Guide</a></div><div id="page-toc-src"><a href="#cloudtrail-log-filename-format">CloudTrail log file name format</a><a href="#cloudtrail-log-file-examples-section">Log file examples</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="cloudtrail-log-file-examples">CloudTrail log file examples</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>CloudTrail monitors events for your account. If you create a trail, it delivers those events as
+        log files to your Amazon S3 bucket. If you create an event data store in CloudTrail Lake, events are
+        logged to your event data store. Event data stores do not use S3 buckets.</p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><p><a href="#cloudtrail-log-filename-format">CloudTrail log file name format</a></p></li><li><p><a href="#cloudtrail-log-file-examples-section">Log file examples</a></p></li></ul></div>
+        <h2 id="cloudtrail-log-filename-format">CloudTrail log file name format</h2>
+        <p>CloudTrail uses the following file name format for the log file objects that it delivers to
+            your Amazon S3 bucket:</p>
+        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="nohighlight ">AccountID_CloudTrail_RegionName_YYYYMMDDTHHmmZ_UniqueString.FileNameFormat </code></pre>
+        <div class="itemizedlist">
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>The <code class="code">YYYY</code>, <code class="code">MM</code>, <code class="code">DD</code>, <code class="code">HH</code>, and
+                        <code class="code">mm</code> are the digits of the year, month, day, hour, and minute
+                    when the log file was delivered. Hours are in 24-hour format. The <code class="code">Z</code>
+                    indicates that the time is in UTC. </p>
+                <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>A log file delivered at a specific time can contain records written at any
+                        point before that time.</p></div></div>
+            </li><li class="listitem">
+                <p>The 16-character <code class="code">UniqueString</code> component of the log file name is
+                    there to prevent overwriting of files. It has no meaning, and log processing
+                    software should ignore it. </p>
+            </li><li class="listitem">
+                <p><code class="code">FileNameFormat</code> is the encoding of the file. Currently, this is
+                        <code class="code">json.gz</code>, which is a JSON text file in compressed gzip
+                    format.</p>
+            </li></ul></div>
+        <p>
+            <b>Example CloudTrail Log File Name</b></p>
+        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="nohighlight ">111122223333_CloudTrail_us-east-2_20150801T0210Z_Mu0KsOhtH1ar15ZZ.json.gz </code></pre>
+     
+        <h2 id="cloudtrail-log-file-examples-section">Log file examples</h2>
+        <p>A log file contains one or more records. The following examples are snippets of logs
+            that show the records for an action that started the creation of a log file. </p>
+        <p>For information about CloudTrail event record fields, see  <a href="./cloudtrail-event-reference-record-contents.html">CloudTrail record contents for management, data, and network activity events</a>.</p>
+        
+        <div class="highlights" id="inline-topiclist"><h6>Contents</h6><ul><li><p><a href="./cloudtrail-log-file-examples.html#cloudtrail-log-file-examples-ec2">Amazon EC2 log examples</a></p></li><li><p><a href="./cloudtrail-log-file-examples.html#cloudtrail-log-file-examples-iam">IAM log examples</a></p></li><li><p><a href="./cloudtrail-log-file-examples.html#error-code-and-error-message">Error code and message log example</a></p></li><li><p><a href="./cloudtrail-log-file-examples.html#insights-event-example">CloudTrail Insights event log example</a></p></li></ul></div>
+         
+            <h3 id="cloudtrail-log-file-examples-ec2">Amazon EC2 log examples</h3>
+            <p>Amazon Elastic Compute Cloud (Amazon EC2) provides resizeable computing capacity in the AWS Cloud. You
+                can launch virtual servers, configure security and networking, and manage storage.
+                Amazon EC2 can also scale up or down quickly to handle changes in requirements or spikes
+                in popularity, thereby reducing your need to forecast server traffic. For more
+                information, see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/">Amazon EC2 User Guide</a>.</p>
+            <p>The following example shows that an IAM user named <code class="code">Mateo</code> ran the <b>aws ec2 start-instances</b> command to call
+                the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html"><code class="code">StartInstances</code></a> action for instances
+                    <code class="code">i-EXAMPLE56126103cb</code> and <code class="code">i-EXAMPLEaff4840c22</code>. </p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "EXAMPLE6E4XEGITWATV6R",
+        "arn": "arn:aws:iam::123456789012:user/Mateo",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Mateo",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:17:28Z",
+    "eventSource": "ec2.amazonaws.com",
+    <b>"eventName": "StartInstances"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/ec2.start-instances",
+    "requestParameters": <span>{</span>
+        "instancesSet": <span>{</span>
+            "items": [
+                <span>{</span>
+                    "instanceId": "i-EXAMPLE56126103cb"
+                },
+                <span>{</span>
+                    "instanceId": "i-EXAMPLEaff4840c22"
+                }
+            ]
+        }
+    },
+    "responseElements": <span>{</span>
+        "requestId": "e4336db0-149f-4a6b-844d-EXAMPLEb9d16",
+        "instancesSet": <span>{</span>
+            "items": [
+                <span>{</span>
+                    "instanceId": "i-EXAMPLEaff4840c22",
+                    "currentState": <span>{</span>
+                        "code": 0,
+                        "name": "pending"
+                    },
+                    "previousState": <span>{</span>
+                        "code": 80,
+                        "name": "stopped"
+                    }
+                },
+                <span>{</span>
+                    "instanceId": "i-EXAMPLE56126103cb",
+                    "currentState": <span>{</span>
+                        "code": 0,
+                        "name": "pending"
+                    },
+                    "previousState": <span>{</span>
+                        "code": 80,
+                        "name": "stopped"
+                    }
+                }
+            ]
+        }
+    },
+    "requestID": "e4336db0-149f-4a6b-844d-EXAMPLEb9d16",
+    "eventID": "e755e09c-42f9-4c5c-9064-EXAMPLE228c7",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "123456789012",
+    "eventCategory": "Management",
+     "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "ec2.us-east-1.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}</code></pre>
+           
+            <p>The following example shows that an IAM user named <code class="code">Nikki</code> ran the <b>aws ec2 stop-instances</b> command to call
+                the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StopInstances.html"><code class="code">StopInstances</code></a> action to stop two instances.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "EXAMPLE6E4XEGITWATV6R",
+        "arn": "arn:aws:iam::777788889999:user/Nikki",
+        "accountId": "777788889999",
+        "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
+        "userName": "Nikki",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:14:20Z",
+    "eventSource": "ec2.amazonaws.com",
+    <b>"eventName": "StopInstances"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/ec2.stop-instances",
+    "requestParameters": <span>{</span>
+        "instancesSet": <span>{</span>
+            "items": [
+                <span>{</span>
+                    "instanceId": "i-EXAMPLE56126103cb"
+                },
+                <span>{</span>
+                    "instanceId": "i-EXAMPLEaff4840c22"
+                }
+            ]
+        },
+        "force": false
+    },
+    "responseElements": <span>{</span>
+        "requestId": "c308a950-e43e-444e-afc1-EXAMPLE73e49",
+        "instancesSet": <span>{</span>
+            "items": [
+                <span>{</span>
+                    "instanceId": "i-EXAMPLE56126103cb",
+                    "currentState": <span>{</span>
+                        "code": 64,
+                        "name": "stopping"
+                    },
+                    "previousState": <span>{</span>
+                        "code": 16,
+                        "name": "running"
+                    }
+                },
+                <span>{</span>
+                    "instanceId": "i-EXAMPLEaff4840c22",
+                    "currentState": <span>{</span>
+                        "code": 64,
+                        "name": "stopping"
+                    },
+                    "previousState": <span>{</span>
+                        "code": 16,
+                        "name": "running"
+                    }
+                }
+            ]
+        }
+    },
+    "requestID": "c308a950-e43e-444e-afc1-EXAMPLE73e49",
+    "eventID": "9357a8cc-a0eb-46a1-b67e-EXAMPLE19b14",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "777788889999",
+    "eventCategory": "Management",
+     "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "ec2.us-east-1.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}</code></pre>
+            
+            <p>The following example shows that an IAM user named <code class="code">Arnav</code> ran the <b>aws ec2 create-key-pair</b> command to call the
+                <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html"><code class="code">CreateKeyPair</code></a> action. Note that the <code class="code">responseElements</code> contain a hash of the
+                key pair and that AWS removed the key material.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGIEXAMPLE",
+        "arn": "arn:aws:iam::444455556666:user/Arnav",
+        "accountId": "444455556666",
+        "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
+        "userName": "Arnav",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:19:22Z",
+    "eventSource": "ec2.amazonaws.com",
+    <b>"eventName": "CreateKeyPair"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/ec2.create-key-pair",
+    "requestParameters": <span>{</span>
+        "keyName": "my-key",
+        "keyType": "rsa",
+        "keyFormat": "pem"
+    },
+    "responseElements": <span>{</span>
+        "requestId": "9aa4938f-720f-4f4b-9637-EXAMPLE9a196",
+        "keyName": "my-key",
+        "keyFingerprint": "1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f",
+        "keyPairId": "key-abcd12345eEXAMPLE",
+        "keyMaterial": "&lt;sensitiveDataRemoved&gt;"
+    },
+    "requestID": "9aa4938f-720f-4f4b-9637-EXAMPLE9a196",
+    "eventID": "2ae450ff-e72b-4de1-87b0-EXAMPLE5227cb",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "444455556666",
+    "eventCategory": "Management",
+    "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "ec2.us-east-1.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}
+            </code></pre>
+            
+         
+         
+            <h3 id="cloudtrail-log-file-examples-iam">IAM log examples</h3>
+            <p>AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS
+                resources. With IAM, you can centrally manage permissions that control which AWS
+                resources users can access. You use IAM to control who is authenticated (signed
+                in) and authorized (has permissions) to use resources. For more information, see the
+                <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">IAM User Guide</a>.</p>
+            <p>The following example shows that the IAM user named <code class="code">Mary</code> ran the <b>aws iam create-user</b> command to call the
+                <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html"><code class="code">CreateUser</code></a> action to create a new user named <code class="code">Richard</code>.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGITEXAMPLE",
+        "arn": "arn:aws:iam::888888888888:user/Mary",
+        "accountId": "888888888888",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Mary",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:25:09Z",
+    "eventSource": "iam.amazonaws.com",
+    <b>"eventName": "CreateUser"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/iam.create-user",
+    "requestParameters": <span>{</span>
+        "userName": "Richard"
+    },
+    "responseElements": <span>{</span>
+        "user": <span>{</span>
+            "path": "/",
+            "arn": "arn:aws:iam::888888888888:user/Richard",
+            "userId": "AIDA6ON6E4XEP7EXAMPLE",
+            "createDate": "Jul 19, 2023 9:25:09 PM",
+            "userName": "Richard"
+        }
+    },
+    "requestID": "2d528c76-329e-410b-9516-EXAMPLE565dc",
+    "eventID": "ba0801a1-87ec-4d26-be87-EXAMPLE75bbb",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "888888888888",
+    "eventCategory": "Management",
+    "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}       </code></pre>
+            
+            <p>The following example shows that the IAM user named <code class="code">Paulo</code> ran the <b>aws iam add-user-to-group</b> command to call
+                the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html"><code class="code">AddUserToGroup</code></a> action to add a user named <code class="code">Jane</code> to the <code class="code">Admin</code> group.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGIEXAMPLE",
+        "arn": "arn:aws:iam::555555555555:user/Paulo",
+        "accountId": "555555555555",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Paulo",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:25:09Z",
+    "eventSource": "iam.amazonaws.com",
+    <b>"eventName": "AddUserToGroup"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/iam.add-user-to-group",
+    "requestParameters": <span>{</span>
+        "groupName": "Admin",
+        "userName": "Jane"
+    },
+    "responseElements": null,
+    "requestID": "ecd94349-b36f-44bf-b6f5-EXAMPLE9c463",
+    "eventID": "2939ba50-1d26-4a5a-83bd-EXAMPLE85850",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "555555555555",
+    "eventCategory": "Management",
+    "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}</code></pre>
+            
+            <p>The following example shows that the IAM user named <code class="code">Saanvi</code> ran the <b>aws iam create-role</b> command to call
+                the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html"><code class="code">CreateRole</code></a> action to create a role.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.08",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGITEXAMPLE",
+        "arn": "arn:aws:iam::777777777777:user/Saanvi",
+        "accountId": "777777777777",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Saanvi",
+        "sessionContext": <span>{</span>
+            "sessionIssuer": <span>{</span>},
+            "webIdFederationData": <span>{</span>},
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:29:12Z",
+    "eventSource": "iam.amazonaws.com",
+    <b>"eventName": "CreateRole"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.5 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/iam.create-role",
+    "requestParameters": <span>{</span>
+        "roleName": "TestRole",
+        "description": "Allows EC2 instances to call AWS services on your behalf.",
+        "assumeRolePolicyDocument": "<span>{</span>\"Version\":\"2012-10-17\",		 	 	 \"Statement\":[<span>{</span>\"Effect\":\"Allow\",\"Action\":[\"sts:AssumeRole\"],\"Principal\":<span>{</span>\"Service\":[\"ec2.amazonaws.com\"]}}]}"
+    },
+    "responseElements": <span>{</span>
+        "role": <span>{</span>
+            "assumeRolePolicyDocument": "<code class="replaceable">policy-statement</code>",
+            "arn": "arn:aws:iam::777777777777:role/TestRole",
+            "roleId": "AROA6ON6E4XEFFEXAMPLE",
+            "createDate": "Jul 19, 2023 9:29:12 PM",
+            "roleName": "TestRole",
+            "path": "/"
+        }
+    },
+    "requestID": "ff38f36e-ebd3-425b-9939-EXAMPLE1bbe",
+    "eventID": "9da77cd0-493f-4c89-8852-EXAMPLEa887c",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "777777777777",
+    "eventCategory": "Management",
+    "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "iam.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}</code></pre>
+         
+         
+            <h3 id="error-code-and-error-message">Error code and message log example</h3>
+            <p>The following example shows that the IAM user named <code class="code">Terry</code> ran the <b>aws cloudtrail update-trail</b> command to call the
+                <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html"><code class="code">UpdateTrail</code></a> action to update a trail named <code class="code">myTrail2</code>,
+                but the trail name was not found. The log shows this error in the
+                    <code class="code">errorCode</code> and <code class="code">errorMessage</code> elements. </p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>"Records": [<span>{</span>
+    "eventVersion": "1.09",
+    "userIdentity": <span>{</span>
+        "type": "IAMUser",
+        "principalId": "AIDA6ON6E4XEGIEXAMPLE",
+        "arn": "arn:aws:iam::111122223333:user/Terry",
+        "accountId": "111122223333",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "Terry",
+        "sessionContext": <span>{</span>
+            "attributes": <span>{</span>
+                "creationDate": "2023-07-19T21:11:57Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2023-07-19T21:35:03Z",
+    "eventSource": "cloudtrail.amazonaws.com",
+    <b>"eventName": "UpdateTrail"</b>,
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "192.0.2.0",
+    "userAgent": "aws-cli/2.13.0 Python/3.11.4 Linux/4.14.255-314-253.539.amzn2.x86_64 exec-env/CloudShell exe/x86_64.amzn.2 prompt/off command/cloudtrail.update-trail",
+    <b>"errorCode": "TrailNotFoundException"</b>,
+    <b>"errorMessage": "Unknown trail: arn:aws:cloudtrail:us-east-1:111122223333:trail/myTrail2 for the user: 111122223333"</b>,
+    "requestParameters": <span>{</span>
+        "name": "myTrail2",
+        "isMultiRegionTrail": true
+    },
+    "responseElements": null,
+    "requestID": "28d2faaf-3319-4649-998d-EXAMPLE72818",
+    "eventID": "694d604a-d190-4470-8dd1-EXAMPLEe20c1",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "111122223333",
+    "eventCategory": "Management",
+    "tlsDetails": <span>{</span>
+        "tlsVersion": "TLSv1.2",
+        "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+        "clientProvidedHostHeader": "cloudtrail.us-east-1.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}]}       </code></pre>
+            
+            
+         
+         
+            <h3 id="insights-event-example">CloudTrail Insights event log example</h3>
+            <p>The following example shows a CloudTrail Insights event log. An Insights event is actually a
+                pair of events that mark the start and end of a period of unusual write management
+                API activity or error response activity. The <code class="code">state</code> field shows whether
+                the event was logged at the start or end of the period of unusual activity. The
+                event name, <code class="code">UpdateInstanceInformation</code>, is the same name as the
+                AWS Systems Manager API for which CloudTrail analyzed management events to determine that unusual
+                activity occurred. Although the start and end events have unique
+                    <code class="code">eventID</code> values, they also have a <code class="code">sharedEventID</code> value
+                that is used by the pair. The Insights event shows the <code class="code">baseline</code>, or the
+                normal pattern of activity, the <code class="code">insight</code>, or average unusual activity
+                that triggered the start Insights event, and in the end event, the
+                    <code class="code">insight</code> value for the average unusual activity over the duration of
+                the Insights event. For more information about CloudTrail Insights, see <a href="./logging-insights-events-with-cloudtrail.html">Working with CloudTrail Insights</a>.</p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>
+    "Records": [<span>{</span>
+        "eventVersion": "1.08",
+        "eventTime": "2023-01-02T02:51:00Z",
+        "awsRegion": "us-east-1",
+        "eventID": "654a30ff-b0f3-4527-81b6-EXAMPLEf2393",
+        "eventType": "AwsCloudTrailInsight",
+        "recipientAccountId": "123456789012",
+        "sharedEventID": "bcbfc274-8559-4a56-beb0-EXAMPLEa6c34",
+        "insightDetails": <span>{</span>
+            "state": "Start",
+            "eventSource": "ssm.amazonaws.com",
+            "eventName": "UpdateInstanceInformation",
+            "insightType": "ApiCallRateInsight",
+            "insightContext": <span>{</span>
+                "statistics": <span>{</span>
+                    "baseline": <span>{</span>
+                        "average": 84.410596421
+                    },
+                    "insight": <span>{</span>
+                        "average": 669
+                    }
+                }
+            }
+        },
+        "eventCategory": "Insight"
+    },
+    <span>{</span>
+        "eventVersion": "1.08",
+        "eventTime": "2023-01-02T00:22:00Z",
+        "awsRegion": "us-east-1",
+        "eventID": "258de2fb-e2a9-4fb5-aeb2-EXAMPLE449a4",
+        "eventType": "AwsCloudTrailInsight",
+        "recipientAccountId": "123456789012",
+        "sharedEventID": "8b74a7bc-d5d3-4d19-9d60-EXAMPLE08b51",
+        "insightDetails": <span>{</span>
+            "state": "End",
+            "eventSource": "ssm.amazonaws.com",
+            "eventName": "UpdateInstanceInformation",
+            "insightType": "ApiCallRateInsight",
+            "insightContext": <span>{</span>
+                "statistics": <span>{</span>
+                    "baseline": <span>{</span>
+                        "average": 74.156423842
+                    },
+                    "insight": <span>{</span>
+                        "average": 657
+                    },
+                    "insightDuration": 1
+                }
+            }
+        },
+        "eventCategory": "Insight"
+    }]
+}</code></pre>
+         
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./cloudtrail-log-file-custom-validation.html">Custom implementations of CloudTrail log file integrity validation</div><div id="next" class="next-link" accesskey="n" href="./use-the-cloudtrail-processing-library.html">Using the CloudTrail Processing Library</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-log-file-examples.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>CloudTrail Lake integrations event schema - AWS CloudTrail</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="query-integration-event-schema" /><meta name="default_state" content="query-integration-event-schema" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-integration-event-schema.html" /><meta name="description" content="This page describes the required and optional schema elements for a CloudTrail Lake integration." /><meta name="deployment_region" content="IAD" /><meta name="product" content="AWS CloudTrail" /><meta name="guide" content="User Guide" /><meta name="abstract" content="Get a history of actions taken by a user, role, or an AWS service account with AWS CloudTrail." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-integration-event-schema.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-integration-event-schema.html" hreflang="x-default" /><meta name="feedback-item" content="CloudTrail" /><meta name="this_doc_product" content="AWS CloudTrail" /><meta name="this_doc_guide" content="User Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'cloudtrail'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="CloudTrail Lake integrations event schema" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>CloudTrail Lake integrations event schema - AWS CloudTrail</title><meta name="pdf" content="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#query-integration-event-schema" /><meta name="rss" content="aws-cloudtrail-document-history.rss" /><meta name="forums" content="https://repost.aws/tags/TAVySJwCMbS4ydy4hjQ7rI8w" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/query-integration-event-schema.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/query-integration-event-schema.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/query-integration-event-schema.html" /><meta name="keywords" content="CloudTrail,Trail,CloudTrail Lake,CloudTrail event history,AWS CloudTrail Lake,event data stores,CloudTrail Lake integrations,CloudTrail Lake integration schema" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "AWS CloudTrail",
+        "item" : "https://docs.aws.amazon.com/cloudtrail/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Working with AWS CloudTrail Lake",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Create an integration with an event source outside of AWS",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "CloudTrail Lake integrations event schema",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#query-integration-event-schema" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/cloudtrail/index.html">AWS CloudTrail</a><a href="cloudtrail-user-guide.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="query-integration-event-schema">CloudTrail Lake integrations event schema</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>The following table describes the required and optional schema elements that match
+                those in CloudTrail event records. The contents of <code class="code">eventData</code> are provided by
+                your events; other fields are provided by CloudTrail after ingestion.</p><p>CloudTrail event record contents are described in more detail in <a href="./cloudtrail-event-reference-record-contents.html">CloudTrail record contents for management, data, and network activity events</a>.</p><div class="itemizedlist">
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><a href="#fields-cloudtrail">Fields that are provided by CloudTrail after
+                            ingestion</a></p>
+                </li><li class="listitem">
+                    <p><a href="#fields-event">Fields that are provided by your
+                            events</a></p>
+                </li></ul></div><div id="fields-cloudtrail"></div><p>The following fields are provided by CloudTrail after ingestion:</p><div class="table-container"><div class="table-contents"><table id="w616aac15c22c27c13"><thead>
+                        <tr>
+                            <th>Field name</th>
+                            <th>Input type</th>
+                            <th>Requirement</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td tabindex="-1">eventVersion</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The event version.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">eventCategory</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The event category. For non-AWS events, the value is
+                                    <code class="code">ActivityAuditLog</code>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">eventType</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The event type. For non-AWS events, the valid value is
+                                    <code class="code">ActivityLog</code>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">eventID</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">A unique ID for an event.</td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">eventTime</td>
+                            <td tabindex="-1">
+                                <p>string</p>
+                            </td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>Event timestamp, in <code class="code">yyyy-MM-DDTHH:mm:ss</code> format, in
+                                    Universal Coordinated Time (UTC).</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">awsRegion</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The AWS Region where the <code class="code">PutAuditEvents</code> call was
+                                    made.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">recipientAccountId</td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>Represents the account ID that received this event. CloudTrail populates
+                                    this field by calculating it from event payload.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">addendum</td>
+                            <td tabindex="-1">
+                                <p>-</p>
+                            </td>
+                            <td tabindex="-1">Optional</td>
+                            <td tabindex="-1">
+                                <p>Shows information about why event processing was delayed. If information
+                                    was missing from an existing event, the addendum block includes the
+                                    missing information and a reason for why it was missing.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>reason</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Optional</td>
+                            <td tabindex="-1">
+                                <p>The reason that the event or some of its contents were
+                                    missing.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>updatedFields</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Optional</td>
+                            <td tabindex="-1">
+                                <p>The event record fields that are updated by the addendum. This is
+                                    only provided if the reason is <code class="code">UPDATED_DATA</code>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>originalUID</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Optional</td>
+                            <td tabindex="-1">
+                                <p>The original event UID from the source. This is only provided if
+                                    the reason is <code class="code">UPDATED_DATA</code>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>originalEventID</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Optional</td>
+                            <td tabindex="-1">
+                                <p>The original event ID. This is only provided if the reason is
+                                    <code class="code">UPDATED_DATA</code>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">metadata</td>
+                            <td tabindex="-1">
+                                <p>-</p>
+                            </td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>Information about the channel that the event used.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>ingestionTime</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The timestamp when the event was processed, in <code class="code">yyyy-MM-DDTHH:mm:ss</code>
+                                    format, in Universal Coordinated Time (UTC).</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">
+                                <div class="itemizedlist">
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p>channelARN</p>
+                                    </li></ul></div>
+                            </td>
+                            <td tabindex="-1">string</td>
+                            <td tabindex="-1">Required</td>
+                            <td tabindex="-1">
+                                <p>The ARN of the channel that the event used.</p>
+                            </td>
+                        </tr>
+                    </table></div></div><div id="fields-event"></div><p>The following fields are provided by customer events:</p><div class="table-container"><div class="table-contents"><table id="w616aac15c22c27c19"><thead>
+                    <tr>
+                        <th>Field name</th>
+                        <th>Input type</th>
+                        <th>Requirement</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td tabindex="-1">eventData</td>
+                        <td tabindex="-1">
+                            <p>-</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">The audit data sent to CloudTrail in a <code class="code">PutAuditEvents</code> call.</td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>version</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">string</td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>The version of the event from its source.</p>
+                            <p>Length constraints: Maximum length of 256.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>userIdentity</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>-</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>Information about the user who made a request.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <div class="itemizedlist">
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p>type</p>
+                                        </li></ul></div>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>The type of user identity.</p>
+                            <p>Length constraints: Maximum length of 128.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <div class="itemizedlist">
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p>principalId</p>
+                                        </li></ul></div>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>A unique identifier for the actor of the event.</p>
+                            <p>Length constraints: Maximum length of 1024.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <div class="itemizedlist">
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p>details</p>
+                                        </li></ul></div>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>JSON object</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>Additional information about the identity.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>userAgent</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>The agent through which the request was made.</p>
+                            <p>Length constraints: Maximum length of 1024.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>eventSource</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>This is the partner event source, or the custom
+                            application about which events are logged.</p>
+                            <p>Length constraints: Maximum length of 1024.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>eventName</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>The requested action, one of the actions in the API for the source
+                                service or application.</p>
+                            <p>Length constraints: Maximum length of 1024.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>eventTime</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>Event timestamp, in <code class="code">yyyy-MM-DDTHH:mm:ss</code> format, in
+                                Universal Coordinated Time (UTC).</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>UID</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">string</td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>The UID value that identifies the request. The service or
+                                application that is called generates this value.</p>
+                            <p>Length constraints: Maximum length of 1024.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>requestParameters</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>JSON object</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>The parameters, if any, that were sent with the request. This
+                                field has a maximum size of 100 kB, and content exceeding the limit
+                                is rejected.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>responseElements</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>JSON object</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>The response element for actions that make changes (create,
+                                update, or delete actions). This field has a maximum size of 100 kB, and content
+                                exceeding the limit is rejected.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>errorCode</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">string</td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>A string representing an error for the event.</p>
+                            <p>Length constraints: Maximum length of 256.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>errorMessage</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">string</td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>The description of the error.</p>
+                            <p>Length constraints: Maximum length of 256.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>sourceIPAddress</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>string</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>The IP address from which the request was made. Both IPv4 and IPv6 addresses are accepted.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>recipientAccountId</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">string</td>
+                        <td tabindex="-1">Required</td>
+                        <td tabindex="-1">
+                            <p>Represents the account ID that received this event. The account ID must be the same as the AWS account ID that owns the channel.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td tabindex="-1">
+                            <div class="itemizedlist">
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p>additionalEventData</p>
+                                </li></ul></div>
+                        </td>
+                        <td tabindex="-1">
+                            <p>JSON object</p>
+                        </td>
+                        <td tabindex="-1">Optional</td>
+                        <td tabindex="-1">
+                            <p>Additional data about the event that was not part of the request
+                                or response. This field has a maximum size of 28 kB, and content
+                                exceeding that limit is rejected.</p>
+                        </td>
+                    </tr>
+                </table></div></div><p>The following example shows the hierarchy of schema elements that match those in
+                CloudTrail event records.</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli (JSON)--><code class="JSON "><span>{</span>
+    "eventVersion": String,
+    "eventCategory": String,
+    "eventType": String,
+    "eventID": String,
+    "eventTime": String,
+    "awsRegion": String,
+    "recipientAccountId": String,
+    "addendum": <span>{</span>
+       "reason": String,
+       "updatedFields": String,
+       "originalUID": String, 
+       "originalEventID": String
+    },
+    "metadata" : <span>{</span> 
+       "ingestionTime": String,
+       "channelARN": String
+    },
+    "eventData": <span>{</span>
+        "version": String,
+        "userIdentity": <span>{</span>
+          "type": String,
+          "principalId": String,
+          "details": <span>{</span>
+             JSON
+          }
+        }, 
+        "userAgent": String,
+        "eventSource": String,
+        "eventName": String,
+        "eventTime": String,
+        "UID": String,
+        "requestParameters": <span>{</span>
+           JSON
+        },
+        "responseElements": <span>{</span>
+           JSON
+        },
+        "errorCode": String,
+        "errorMessage": String,
+        "sourceIPAddress": String,
+        "recipientAccountId": String,
+        "additionalEventData": <span>{</span>
+           JSON
+        }
+    }
+}</code></pre><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./lake-cli-delete-integration.html">Delete a channel with the AWS CLI</div><div id="next" class="next-link" accesskey="n" href="./lake-dashboard.html">Dashboards</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/query-integration-event-schema.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/query-integration-event-schema.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

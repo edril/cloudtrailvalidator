@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>CloudTrail record contents for management, data, and network activity events - AWS CloudTrail</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="cloudtrail-event-reference-record-contents" /><meta name="default_state" content="cloudtrail-event-reference-record-contents" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" /><meta name="description" content="This page describes the fields contained in a CloudTrail event record for a management, data, or network activity event." /><meta name="deployment_region" content="IAD" /><meta name="product" content="AWS CloudTrail" /><meta name="guide" content="User Guide" /><meta name="abstract" content="Get a history of actions taken by a user, role, or an AWS service account with AWS CloudTrail." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" hreflang="x-default" /><meta name="feedback-item" content="CloudTrail" /><meta name="this_doc_product" content="AWS CloudTrail" /><meta name="this_doc_guide" content="User Guide" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'cloudtrail'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="CloudTrail record contents for management, data, and network activity events" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>CloudTrail record contents for management, data, and network activity events - AWS CloudTrail</title><meta name="pdf" content="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#cloudtrail-event-reference-record-contents" /><meta name="rss" content="aws-cloudtrail-document-history.rss" /><meta name="forums" content="https://repost.aws/tags/TAVySJwCMbS4ydy4hjQ7rI8w" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html" /><meta name="keywords" content="CloudTrail,Trail,CloudTrail Lake,CloudTrail event history,CloudTrail events,management events,data events,Insights events,CloudTrail event fields,CloudTrail fields" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "AWS CloudTrail",
+        "item" : "https://docs.aws.amazon.com/cloudtrail/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Understanding CloudTrail events",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-events.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "CloudTrail record contents for management, data, and network activity events",
+        "item" : "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-events.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/awscloudtrail/latest/userguide/awscloudtrail-ug.pdf#cloudtrail-event-reference-record-contents" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/cloudtrail/index.html">AWS CloudTrail</a><a href="cloudtrail-user-guide.html">User Guide</a></div><div id="page-toc-src"><a href="#context-event-truncation-order">Field truncation order for maximum event size of 1 MB</a><a href="#shared-event-ID">Example sharedEventID</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="cloudtrail-event-reference-record-contents">CloudTrail record contents for management, data, and network activity events</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>This page describes the record contents of a management, data, or network activity
+		event.</p><p>The body of the record contains fields that help you determine the requested action as well
+		as when and where the request was made. When the value of <b>Optional</b> is <b>True</b>, the field is only present
+		when it applies to the service, API, or event type. An <b>Optional</b> value of <b>False</b> means that the
+		field is either always present, or that its presence does not depend on the service, API, or
+		event type. An example is <code class="code">responseElements</code>, which is present in events for
+		actions that make changes (create, update, or delete actions).</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Fields for enriched events such as <code class="code">eventContext</code> are only available for
+			management events and data events. They are not available for network events.</p></div></div><div class="variablelist">
+		 
+		 
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">eventTime</code></b></span></dt>
+			<dd>
+				<p>The date and time the request was completed, in coordinated universal time (UTC). An event's
+					time stamp comes from the local host that provides the service API endpoint on
+					which the API call was made. For example, a <b>CreateBucket</b> API
+					event that is run in the US West (Oregon) Region would get its time stamp from
+					the time on an AWS host running the Amazon S3 endpoint,
+						<code class="code">s3.us-west-2.amazonaws.com</code>. In general, AWS services use
+					Network Time Protocol (NTP) to synchronize their system clocks.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		 
+			<dt><span class="term"><b><code class="code">eventVersion</code></b></span></dt>
+			<dd>
+				<p>The version of the log event format. The current version is 1.11.</p>
+				<p>The <code class="code">eventVersion</code> value is a major and minor version in the form
+						<code class="replaceable">major_version</code>.<code class="replaceable">minor_version</code>.
+					For example, you can have an <code class="code">eventVersion</code> value of
+						<code class="code">1.10</code>, where <code class="code">1</code> is the major version, and
+						<code class="code">10</code> is the minor version.</p>
+				<p>CloudTrail increments the major version if a change is made to the event structure
+					that is not backward-compatible. This includes removing a JSON field that
+					already exists, or changing how the contents of a field are represented (for
+					example, a date format). CloudTrail increments the minor version if a change adds new
+					fields to the event structure. This can occur if new information is available
+					for some or all existing events, or if new information is available only for new
+					event types. Applications can ignore new fields to stay compatible with new
+					minor versions of the event structure.</p>
+				<p>If CloudTrail introduces new event types, but the structure of the event is
+					otherwise unchanged, the event version does not change.</p>
+				<p>To be sure that your applications can parse the event structure, we recommend that you
+					perform an equal-to comparison on the major version number. To be sure that
+					fields that are expected by your application exist, we also recommend performing
+					a greater-than-or-equal-to comparison on the minor version. There are no leading
+					zeroes in the minor version. You can interpret both
+						<code class="replaceable">major_version</code> and
+						<code class="replaceable">minor_version</code> as numbers, and perform comparison
+					operations.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		 
+			<dt><span class="term"><b><code class="code">userIdentity</code></b></span></dt>
+			<dd>
+				<p>Information about the IAM identity that made a request. For more information, see
+						<a href="./cloudtrail-event-reference-user-identity.html">CloudTrail userIdentity element</a>. </p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">eventSource</code></b></span></dt>
+			<dd>
+				<p>The service that the request was made to. This name is typically a short form
+					of the service name without spaces plus <code class="code">.amazonaws.com</code>. For
+					example:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p>CloudFormation is <code class="code">cloudformation.amazonaws.com</code>.</p>
+					</li><li class="listitem">
+						<p>Amazon EC2 is <code class="code">ec2.amazonaws.com</code>.</p>
+					</li><li class="listitem">
+						<p>Amazon Simple Workflow Service is <code class="code">swf.amazonaws.com</code>.</p>
+					</li></ul></div>
+				<p>This convention has some exceptions. For example, the <code class="code">eventSource</code>
+					for Amazon CloudWatch is <code class="code">monitoring.amazonaws.com</code>.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">eventName</code></b></span></dt>
+			<dd>
+				<p>The requested action, which is one of the actions in the API for that service.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">awsRegion</code></b></span></dt>
+			<dd>
+				<p>The AWS Region that the request was made to, such as <code class="code">us-east-2</code>.
+					See <a href="./cloudtrail-supported-regions.html">CloudTrail supported Regions</a>.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">sourceIPAddress</code></b></span></dt>
+			<dd>
+				<p>The IP address that the request was made from. For actions that originate from the service
+					console, the address reported is for the underlying customer resource, not the
+					console web server. For services in AWS, only the DNS name is displayed.</p>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For events originated by AWS, this field is usually <code class="code">AWS Internal/<code class="replaceable">#</code></code>, 
+						where
+						<code class="code"><code class="replaceable">#</code></code> is a number used for
+						internal purposes.</p></div></div>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">userAgent</code></b></span></dt>
+			<dd>
+				<p>The agent through which the request was made, such as the AWS Management Console, an AWS service, the
+					AWS SDKs or the AWS CLI.</p>
+				<p>This field has a maximum size of 1 KB; content
+					exceeding that limit is truncated. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only truncated if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+					
+				<p>The following are example values:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><code class="code">lambda.amazonaws.com</code> â The request was made with
+							AWS Lambda.</p>
+					</li><li class="listitem">
+						<p><code class="code">aws-sdk-java</code> â The request was made with the
+							AWS SDK for Java. </p>
+					</li><li class="listitem">
+						<p><code class="code">aws-sdk-ruby</code> â The request was made with the
+							AWS SDK for Ruby. </p>
+					</li><li class="listitem">
+						<p><code class="code">aws-cli/1.3.23 Python/2.7.6 Linux/2.6.18-164.el5</code> â
+							The request was made with the AWS CLI installed on Linux. </p>
+					</li></ul></div>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For events originated by AWS, if CloudTrail knows which AWS service made 
+						the call, this field is the event source of the calling service
+						(for example, <code class="code">ec2.amazonaws.com</code>). Otherwise, this field is <code class="code">AWS
+								Internal/<code class="replaceable">#</code></code>, where
+								<code class="code"><code class="replaceable">#</code></code> is a number used for
+						internal purposes.</p></div></div>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">errorCode</code></b></span></dt>
+			<dd>
+				<p>The AWS service error if the request returns an error. For an example that shows this
+					field, see <a href="./cloudtrail-log-file-examples.html#error-code-and-error-message">Error code and message log example</a>.</p>
+				<p>This field has a maximum
+					size of 1 KB; content exceeding that limit is truncated. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only truncated if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p>For network activity events, when there is a VPC endpoint policy violation,  
+					the error code is <code class="code">VpceAccessDenied</code>.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">errorMessage</code></b></span></dt>
+			<dd>
+				<p>If the request returns an error, the description of the error. This message includes
+					messages for authorization failures. CloudTrail captures the message logged by the
+					service in its exception handling. For an example, see <a href="./cloudtrail-log-file-examples.html#error-code-and-error-message">Error code and message log example</a>.</p>
+				<p>This field has a maximum
+					size of 1 KB; content exceeding that limit is truncated. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only truncated if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p>For network activity events, when there is a VPC endpoint policy violation, 
+					the <code class="code">errorMessage</code> will always be the following message: <code class="code">The request was denied due to a VPC endpoint policy</code>. For more information about 
+					access denied events for VPC endpoint policy violations, 
+					see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_access-denied.html#access-denied-error-examples">
+						Access denied error message examples</a> in the <em>IAM User Guide</em>. 
+					For an example network activity event showing a VPC endpoint policy violation, see 
+					<a href="./cloudtrail-events.html#network-event-example">Network activity events</a> in this guide.</p>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Some AWS services provide the <code class="code">errorCode</code> and
+							<code class="code">errorMessage</code> as top-level fields in the event. Other AWS
+						services provide error information as part of
+						<code class="code">responseElements</code>.</p></div></div>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">requestParameters</code></b></span></dt>
+			<dd>
+				<p>The parameters, if any, that were sent with the request. These parameters are documented
+					in the API reference documentation for the appropriate AWS service. This field has a maximum size of 100 KB. 
+					When the field size exceeds 100 KB, the <code class="code">requestParameters</code> content is omitted. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only omitted if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">responseElements</code></b></span></dt>
+			<dd>
+				<p>The response elements, if any, for actions that make changes (create, update, or delete
+					actions). For <code class="code">readOnly</code> APIs, this field is <code class="code">null</code>. If the action
+					&#x2028;doesn't return response elements, this field is <code class="code">null</code>. The response elements for actions are documented in the
+					API reference&#x2028; documentation for the appropriate AWS service.</p>
+				<p>This field has a
+					maximum size of 100 KB. When the field size exceeds 100 KB, the
+					<code class="code">reponseElements</code> content is omitted. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only omitted if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p>The <code class="code">responseElements</code> value is useful to help you trace a request&#x2028; with AWS Support. 
+					Both <code class="code">x-amz-request-id</code> and <code class="code">x-amz-id-2</code>&#x2028; contain information that helps 
+					you trace a request with Support. These values are&#x2028; the same as those 
+					that the service returns in the response to the request that&#x2028; initiates the events, 
+					so you can use them to match the event to the&#x2028; request.</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term">
+				<b><code class="code">additionalEventData</code></b>
+			</span></dt>
+			<dd>
+				<p>Additional data about the event that was not part of the request or response. This field
+					has a maximum size of 28 KB. When the field size exceeds 28 KB, the
+					<code class="code">additionalEventData</code> content is omitted. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only omitted if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p>The content of <code class="code">additionalEventData</code> is variable. For example, 
+					for <a href="./cloudtrail-event-reference-aws-console-sign-in-events.html">AWS Management Console sign-in events</a>, 
+					<code class="code">additionalEventData</code> could include the <code class="code">MFAUsed</code> field with a value of <code class="code">Yes</code> 
+					if the request was made by a root or IAM user using multi-factor authentication (MFA).</p>
+				<p><b>Since:</b> 1.0</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">requestID</code></b></span></dt>
+			<dd>
+				<p>The value that identifies the request. The service being called generates this value. This
+					field has a maximum size of 1 KB; content exceeding that limit is
+					truncated. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only truncated if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p><b>Since:</b> 1.01</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">eventID</code></b></span></dt>
+			<dd>
+				<p>GUID generated by CloudTrail to uniquely identify each event. You can use this value
+					to identify a single event. For example, you can use the ID as a primary key to
+					retrieve log data from a searchable database. </p>
+				
+				<p><b>Since:</b> 1.01</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt id="ct-event-type"><span class="term"><b><code class="code">eventType</code></b></span></dt>
+			<dd>
+				<p>Identifies the type of event that generated the event record. This can be the one of the
+					following values:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><code class="code">AwsApiCall</code> â An API was called.</p>
+					</li><li class="listitem">
+						<p><code class="code"><a href="./non-api-aws-service-events.html">AwsServiceEvent</a></code> â The service generated an
+							event related to your trail. For example, this can occur when another
+							account made a call with a resource that you own. </p>
+					</li><li class="listitem">
+						<p><code class="code">AwsConsoleAction</code> â An action was taken in the
+							console that was not an API call.</p>
+					</li><li class="listitem">
+						<p><code class="code"><a href="./cloudtrail-event-reference-aws-console-sign-in-events.html">AwsConsoleSignIn</a></code> â A user in your account
+							(root, IAM, federated, SAML, or SwitchRole) signed in to the
+							AWS Management Console.</p>
+					</li><li class="listitem">
+						<p>
+							<code class="code"><a href="./logging-network-events-with-cloudtrail.html">AwsVpceEvents</a></code> â CloudTrail network activity events 
+							enable VPC endpoint owners to record AWS API calls made using 
+							their VPC endpoints from a private VPC to the AWS service. To record network activity events, the VPC endpoint owner must enable
+								network activity events for the event source.
+						</p>
+					</li></ul></div>
+				<p><b>Since:</b> 1.02</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">apiVersion</code></b></span></dt>
+			<dd>
+				<p>Identifies the API version associated with the <code class="code">AwsApiCall</code>
+					<code class="code">eventType</code> value.</p>
+				<p><b>Since:</b> 1.01</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">managementEvent</code></b></span></dt>
+			<dd>
+				<p>A Boolean value that identifies whether the event is a management event.
+						<code class="code">managementEvent</code> is shown in an event record if
+						<code class="code">eventVersion</code> is 1.06 or higher, and the event type is one of
+					the following:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><code class="code">AwsApiCall</code></p>
+					</li><li class="listitem">
+						<p><code class="code">AwsConsoleAction</code></p>
+					</li><li class="listitem">
+						<p><code class="code">AwsConsoleSignIn</code></p>
+					</li><li class="listitem">
+						<p><code class="code">AwsServiceEvent</code></p>
+					</li></ul></div>
+				<p><b>Since:</b> 1.06</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term">
+				<b><code class="code">readOnly</code></b>
+			</span></dt>
+			<dd>
+				<p>Identifies whether this operation is a read-only operation. This can be one of
+					the following values:</p>
+				<div class="itemizedlist">
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><code class="code">true</code> â The operation is read-only (for example,
+								<code class="code">DescribeTrails</code>).</p>
+					</li><li class="listitem">
+						<p><code class="code">false</code> â The operation is write-only (for example,
+								<code class="code">DeleteTrail</code>).</p>
+					</li></ul></div>
+				<p><b>Since:</b> 1.01</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term">
+				<b><code class="code">resources</code></b>
+			</span></dt>
+			<dd>
+				<p>A list of resources accessed in the event. The field can contain the following
+					information:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p>Resource ARNs</p>
+					</li><li class="listitem">
+						<p>Account ID of the resource owner</p>
+					</li><li class="listitem">
+						<p>Resource type identifier in the format:
+									<code class="code">AWS::<code class="replaceable">aws-service-name</code>::<code class="replaceable">data-type-name</code></code></p>
+					</li></ul></div>
+				<p>For example, when an <code class="code">AssumeRole</code> event is logged, the
+						<code class="code">resources</code> field can appear like the following:</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p>ARN:
+									<code class="code">arn:aws:iam::123456789012:role/<code class="replaceable">myRole</code></code></p>
+					</li><li class="listitem">
+						<p>Account ID: <code class="code">123456789012</code></p>
+					</li><li class="listitem">
+						<p>Resource type identifier:
+							<code class="code">AWS::<code class="code">IAM</code>::Role</code></p>
+					</li></ul></div>
+				<p>For example logs with the <code class="code">resources</code> field, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html#stscloudtrailexample">AWS STS
+						API Event in CloudTrail Log File</a> in the
+						<em>IAM User Guide</em> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/logging-using-cloudtrail.html"> Logging AWS KMS API
+						Calls</a> in the <em>AWS Key Management Service Developer Guide</em>.</p>
+				<p><b>Since:</b> 1.01</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">recipientAccountId</code></b></span></dt>
+			<dd>
+				<p>Represents the account ID that received this event. The
+						<code class="code">recipientAccountID</code> may be different from the <a href="./cloudtrail-event-reference-user-identity.html">CloudTrail userIdentity element</a>
+					<code class="code">accountId</code>. This can occur in cross-account resource access. For
+					example, if a KMS key, also known as an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS KMS key</a>, was used by a separate account to call
+					the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/ct-encrypt.html">Encrypt API</a>, the
+						<code class="code">accountId</code> and <code class="code">recipientAccountID</code> values will be
+					the same for the event delivered to the account that made the call, but the
+					values will be different for the event that is delivered to the account that
+					owns the KMS key.</p>
+				<p><b>Since:</b> 1.02</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">serviceEventDetails</code></b></span></dt>
+			<dd>
+				<p>Identifies the service event, including what triggered the event and the result. For more
+					information, see <a href="./non-api-aws-service-events.html">AWS service events</a>. This field has a maximum size of 100 KB. 
+					When the field size exceeds 100 KB, the <code class="code">serviceEventDetails</code> content is omitted. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only omitted if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p><b>Since:</b> 1.05</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">sharedEventID</code></b></span></dt>
+			<dd>
+				<p>GUID generated by CloudTrail to uniquely identify CloudTrail events from the same AWS
+					action that is sent to different AWS accounts.</p>
+				<p>For example, when an account uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS KMS key</a> that
+					belongs to another account, the account that used the KMS key and the account that
+					owns the KMS key receive separate CloudTrail events for the same action. Each CloudTrail event
+					delivered for this AWS action shares the same <code class="code">sharedEventID</code>, but
+					also has a unique <code class="code">eventID</code> and
+					<code class="code">recipientAccountID</code>.</p>
+				<p>For more information, see <a href="#shared-event-ID">Example sharedEventID</a>.</p>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>The <code class="code">sharedEventID</code> field is present only when CloudTrail events are
+						delivered to multiple accounts. If the caller and owner are the same AWS
+						account, CloudTrail sends only one event, and the <code class="code">sharedEventID</code> field
+						is not present.</p></div></div>
+				<p><b>Since:</b> 1.03</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+		 
+	<dl>
+			<dt><span class="term">
+				<b><code class="code">vpcEndpointId</code></b>
+			</span></dt>
+			<dd>
+				<p>Identifies the VPC endpoint in which requests were made from a VPC to another
+					AWS service, such as Amazon EC2. </p>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For events originated by AWS and through an AWS service's VPC, 
+						this field is usually <code class="code">AWS Internal</code> or the service name.</p></div></div>
+				<p><b>Since:</b> 1.04</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div><div class="variablelist">
+			 
+		<dl>
+				<dt><span class="term">
+					<b><code class="code">vpcEndpointAccountId</code></b>
+				</span></dt>
+				<dd>
+						<p>Identifies the AWS account ID of the VPC endpoint owner 
+							for the corresponding endpoint for which a request has traversed.</p>
+					<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For events originated by AWS and through an AWS service's VPC, 
+							this field is usually <code class="code">AWS Internal</code> or the service name.</p></div></div>
+					<p><b>Since:</b> 1.09</p>
+					<p><b>Optional:</b> True</p>
+				</dd>
+			</dl></div><div class="variablelist">
+		 
+		 
+		 
+			 
+		 
+		 
+	<dl>
+			<dt><span class="term"><b><code class="code">eventCategory</code></b></span></dt>
+			<dd>
+				<p>Shows the event category. The event category is used in <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html"><code class="code">LookupEvents</code></a> calls 
+					to filter on management events.</p>
+				<div class="itemizedlist">
+					 
+					 
+					
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p>For management events, the value is <code class="code">Management</code>.</p>
+					</li><li class="listitem">
+						<p>For data events, the value is <code class="code">Data</code>.</p>
+					</li><li class="listitem">
+						<p>For network activity events, the value is <code class="code">NetworkActivity</code>.</p>
+					</li></ul></div>
+				
+				<p><b>Since:</b> 1.07</p>
+				<p><b>Optional:</b> False</p>
+			</dd>
+		 
+			<dt><span class="term"><b><code class="code">addendum</code></b></span></dt>
+			<dd>
+				<p>If an event delivery was delayed, or additional information about an existing event
+					becomes available after the event is logged, an addendum field shows information
+					about why the event was delayed. If information was missing from an existing
+					event, the addendum field includes the missing information and a reason for why
+					it was missing. Contents include the following.</p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><b><code class="code">reason</code></b> - The reason that
+							the event or some of its contents were missing. Values can be any of the
+							following.</p>
+						<div class="itemizedlist">
+							 
+							 
+							 
+						<ul class="itemizedlist"><li class="listitem">
+								<p><b><code class="code">DELIVERY_DELAY</code></b> â
+									There was a delay delivering events. This could be caused by
+									high network traffic, connectivity issues, or a CloudTrail service
+									issue.</p>
+							</li><li class="listitem">
+								<p><b><code class="code">UPDATED_DATA</code></b> â A field in the event
+									record was missing or had an incorrect value.</p>
+							</li><li class="listitem">
+								<p><b><code class="code">SERVICE_OUTAGE</code></b> â
+									A service that logs events to CloudTrail had an outage, and couldnât
+									log events to CloudTrail. This is exceptionally rare.</p>
+							</li></ul></div>
+					</li><li class="listitem">
+						<p><b><code class="code">updatedFields</code></b> - The event record fields
+							that are updated by the addendum. This is only provided if the reason is
+								<code class="code">UPDATED_DATA</code>.</p>
+					</li><li class="listitem">
+						<p><b><code class="code">originalRequestID</code></b> - The original unique ID
+							of the request. This is only provided if the reason is
+								<code class="code">UPDATED_DATA</code>.</p>
+					</li><li class="listitem">
+						<p><b><code class="code">originalEventID</code></b> - The original event ID.
+							This is only provided if the reason is <code class="code">UPDATED_DATA</code>.</p>
+					</li></ul></div>
+				<p><b>Since:</b> 1.08</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		 
+			<dt><span class="term"><b><code class="code">sessionCredentialFromConsole</code></b></span></dt>
+			<dd>
+				<p>String with a value of <code class="code">true</code> or <code class="code">false</code> that 
+					shows whether or not an event originated from an AWS Management Console session. This field is not shown
+					unless the value is <code class="code">true</code>, meaning that the client that was used to
+					make the API call was either a proxy or an external client. If a proxy client
+					was used, the<code class="code">tlsDetails</code> event field is not shown.</p>
+				<p><b>Since:</b> 1.08</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		 
+				<dt><span class="term"><b><code class="code">eventContext</code></b></span></dt>
+				<dd>
+					<p>This field is present in enriched events recorded for event data stores that were
+					configured to include resource tag keys or IAM global condition keys. For more
+					information, see <a href="./cloudtrail-context-events.html">Enrich CloudTrail events by adding resource tag keys and IAM global condition keys</a>.</p>
+					<p>Contents include the following:</p>
+					<div class="itemizedlist">
+						 
+						 
+					<ul class="itemizedlist"><li class="listitem">
+							<p><code class="code">requestContext</code> â Includes information about the IAM global condition keys that were evaluated during the authorization process, 
+								including additional details about the principal, session, network, and the request itself.</p>
+						</li><li class="listitem">
+							<p><code class="code">tagContext</code> â Includes the tags associated with the resources that
+							were involved in the API call as well as tags associated with IAM
+							principals such as roles or users. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html#access_iam-tags_control-principals">Controlling access for IAM principals</a>. </p>
+						<p>API events related to deleted resources will not have resource
+							tags.</p>
+						</li></ul></div>
+					<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>The <code class="code">eventContext</code> field is only present in events for event data
+							stores that are configured to include resource tag keys and IAM global condition
+							keys. Events delivered to <b>Event history</b>, Amazon EventBridge, viewable with the
+							AWS CLI <code class="code">lookup-events</code> command, and delivered to trails, will not include the
+							<code class="code">eventContext</code> field.</p></div></div>
+					<p><b>Since:</b> 1.11</p>
+					<p><b>Optional:</b> True</p>
+				</dd>
+			 
+			<dt><span class="term"><b><code class="code">edgeDeviceDetails</code></b></span></dt>
+			<dd>
+				<p>Shows information about edge devices that are targets of a request. Currently, <a href="https://aws.amazon.com/s3/outposts/" rel="noopener noreferrer" target="_blank"><span><code class="code">S3 Outposts</code></span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> device
+					events include this field. This field has a maximum size of 28 KB; content
+					exceeding that limit is truncated. For event data stores configured to have a maximum event size of 1 MB, 
+					the field content is only truncated if the event payload exceeds 1 MB and the maximum field size is exceeded.</p>
+				<p><b>Since:</b> 1.08</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		 
+			<dt id="tls-details"><span class="term"><b><code class="code">tlsDetails</code></b></span></dt>
+			<dd>
+				<p>Shows information about the Transport Layer Security (TLS) version, cipher suites, and the
+					fully qualified domain name (FQDN) of the client-provided host name used in the
+					service API call, which is typically the FQDN of the service endpoint. CloudTrail
+					still logs partial TLS details if expected information is missing or empty. For
+					example, if the TLS version and cipher suite are present, but the
+						<code class="code">HOST</code> header is empty, available TLS details are still logged in
+					the CloudTrail event.</p>
+				
+				<div class="itemizedlist">
+					 
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><b><code class="code">tlsVersion</code></b> - The TLS
+							version of a request.</p>
+					</li><li class="listitem">
+						<p><b><code class="code">cipherSuite</code></b> - The cipher suite
+							(combination of security algorithms used) of a request.</p>
+					</li><li class="listitem">
+						<p><b><code class="code">clientProvidedHostHeader</code></b> - The
+							client-provided host name used in the service API call, which is
+							typically the FQDN of the service endpoint.</p>
+					</li><li class="listitem">
+						<p><b><code class="code">keyExchange</code></b> - The key exchange
+							method used in the TLS handshake. This field indicates whether the connection
+							used classical cryptography or post-quantum cryptography. Example values include
+							<code class="code">X25519MLKEM768</code> for post-quantum TLS 1.3, <code class="code">x25519</code> for
+							classical TLS 1.3, and <code class="code">secp256r1</code> for TLS 1.2.</p>
+					</li></ul></div>
+				<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>There are some cases when the <code class="code">tlsDetails</code> field is not present in an event record.</p><div class="itemizedlist">
+						 
+						 
+					<ul class="itemizedlist"><li class="listitem">
+							<p>The <code class="code">tlsDetails</code> field is not present if the API call was made by an AWS service on your behalf. The <code class="code">invokedBy</code> field in the <code class="code">userIdentity</code> element identifies the AWS service 
+								that made the API call.</p>
+						</li><li class="listitem">
+							<p>If <code class="code">sessionCredentialFromConsole</code> is present with a value of true, <code class="code">tlsDetails</code> is present in an event record only if an external client was used to make the API call.</p>
+						</li></ul></div></div></div>
+				<p><b>Since:</b> 1.08</p>
+				<p><b>Optional:</b> True</p>
+			</dd>
+		</dl></div>
+		<h2 id="context-event-truncation-order">Field truncation order for maximum event size of 1 MB</h2>
+		
+		<p>You can expand the maximum event size from 256 KB up to 1 MB when you create or 
+			update an event data store using the <a href="./query-event-data-store-cloudtrail.html">CloudTrail console</a>, <a href="./lake-cli-manage-eds.html#lake-cli-put-event-configuration">AWS CLI</a>, and SDKs.</p>
+		<p>Expanding the event size is helpful for analyzing and troubleshooting events because it allows you to 
+			see the full contents of fields that would normally get truncated or omitted.</p>
+		<p>When the event payload exceeds 1 MB, CloudTrail truncates fields in the following order:</p>
+		<div class="itemizedlist">
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p><code class="code">annotation</code></p>
+			</li><li class="listitem">
+				<p><code class="code">requestID</code></p>
+			</li><li class="listitem">
+				<p><code class="code">additionalEventData</code></p>
+			</li><li class="listitem">
+				<p><code class="code">serviceEventDetails</code></p>
+			</li><li class="listitem">
+				<p><code class="code">userAgent</code></p>
+			</li><li class="listitem">
+				<p><code class="code">errorCode</code></p>
+			</li><li class="listitem">
+				<p><code class="code">eventContext</code></p>
+			</li><li class="listitem">
+				<p><code class="code">responseElements</code></p>
+			</li><li class="listitem">
+				<p><code class="code">requestParameters</code></p>
+			</li><li class="listitem">
+				<p><code class="code">errorMessage</code></p>
+			</li></ul></div>
+		<p>If an event payload cannot be reduced to under 1 MB even after truncation, an error
+			will occur.</p>
+	 
+		<h2 id="shared-event-ID">Example sharedEventID</h2>
+		<p>The following is an example that describes how CloudTrail delivers two events for the same
+			action:</p>
+		<div class="procedure"><ol><li>
+				<p>Alice has AWS account (111111111111) and creates an AWS KMS key.
+					She is the owner of this KMS key. </p>
+			</li><li>
+				<p>Bob has AWS account (222222222222). Alice gives Bob permission to
+					use the KMS key. </p>
+			</li><li>
+				<p>Each account has a trail and a separate bucket.</p>
+			</li><li>
+				<p>Bob uses the KMS key to call the <code class="code">Encrypt</code> API. </p>
+			</li><li>
+				<p>CloudTrail sends two separate events. </p>
+				<div class="itemizedlist">
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p>One event is sent to Bob. The event shows that he used the KMS key.</p>
+					</li><li class="listitem">
+						<p>One event is sent to Alice. The event shows that Bob used the
+							KMS key.</p>
+					</li><li class="listitem">
+						<p>The events have the same <code class="code">sharedEventID</code>, but the
+								<code class="code">eventID</code> and <code class="code">recipientAccountID</code> are
+							unique.</p>
+					</li></ul></div>
+			</li></ol></div>
+		<div class="mediaobject">
+			 
+				<img src="/images/awscloudtrail/latest/userguide/images/event-reference-sharedEventId.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="How the sharedEventID field appears in logs" />
+			 
+			 
+		</div>
+	<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./cloudtrail-context-events.html">Add resource tag keys and IAM global condition keys to events</div><div id="next" class="next-link" accesskey="n" href="./cloudtrail-event-reference-aggregated-events.html">CloudTrail record contents for aggregated events</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=CloudTrail&amp;topic_url=https://docs.aws.amazon.com/en_us/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>
