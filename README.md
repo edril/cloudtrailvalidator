@@ -11,6 +11,7 @@ The reference corpus data derives from the excellent [flaws.cloud](https://summi
 ## Features
 
 - **Corpus Building**: Extract field paths from real CloudTrail logs to build a reference database
+- **Incremental Updates**: Append new logs to existing corpus without rebuilding
 - **Structure Validation**: Verify mandatory CloudTrail fields and data types
 - **Corpus Validation**: Detect unknown field paths that don't exist in genuine logs
 - **Batch Processing**: Recursively process directories of JSON and gzipped JSON files
@@ -40,7 +41,17 @@ This will:
 - Extract all field paths from CloudTrail events
 - Save the corpus to `corpus.db`
 
-### 2. Validate Test Logs
+### 2. Append More Logs (Optional)
+
+Add new logs to existing corpus without rebuilding:
+
+```bash
+python validator.py --append /path/to/more/cloudtrail/logs/
+```
+
+This merges new data into `corpus.db` and shows incremental statistics.
+
+### 3. Validate Test Logs
 
 Validate suspicious logs against the corpus:
 
