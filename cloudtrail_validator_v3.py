@@ -13,7 +13,7 @@ Four modes:
    python cloudtrail_validator_v3.py test.json [--csv]
 
 4. BATCH: Validate multiple test logs in a directory
-   python cloudtrail_validator_v3.py --batch /path/to/test/logs/
+   python cloudtrail_validator_v3.py --batch /path/to/test/logs/ [--verbose]
 """
 
 import sys
@@ -22,6 +22,7 @@ import gzip
 from pathlib import Path
 from typing import Dict, Any, List, Set
 from collections import defaultdict
+from datetime import datetime
 
 CORPUS_DB = Path("./corpus.db")
 
@@ -329,10 +330,11 @@ def validate_file(filepath: Path, corpus: Dict[str, Any], csv_output: bool = Fal
             writer.writerows(report)
         print(f"\n📄 Report saved: {csv_path}")
 
-def batch_validate(batch_dir: Path, corpus: Dict[str, Any]):
-    """Validate all log files in a directory - simple PASS/FAIL output."""
+def batch_validate(batch_dir: Path, corpus: Dict[str, Any], verbose: bool = False):
+    """Validate all log files in a directory."""
     
     print(f"\n📂 Batch validation: {batch_dir}")
+    print(f"   Mode: {'VERBOSE (detailed)' if verbose else 'SUMMARY (PASS/FAIL only)'}\n")
     
     # Find all JSON files
     json_files = list(batch_dir.rglob("*.json"))
@@ -350,24 +352,40 @@ def batch_validate(batch_dir: Path, corpus: Dict[str, Any]):
     pass_count = 0
     fail_count = 0
     
+    # For markdown report
+    md_sections = []
+    
     for filepath in sorted(all_files):
         events = load_json_file(filepath)
         
         if not events:
-            print(f"❌ FAIL - {filepath.name} (no events)")
+            if verbose:
+                print(f"\n{'='*60}")
+                print(f"❌ FAIL - {filepath.name}")
+                print(f"{'='*60}")
+                print("No events found in file\n")
+            else:
+                print(f"❌ FAIL - {filepath.name} (no events)")
+            
             fail_count += 1
-            results.append({'file': filepath.name, 'status': 'FAIL', 'reason': 'No events'})
+            results.append({'file': filepath.name, 'status': 'FAIL', 'reason': 'No events', 'details': []})
+            
+            if verbose:
+                md_sections.append(f"## ❌ {filepath.name}\n\n**Status:** FAIL  \n**Reason:** No events found in file\n")
+            
             continue
         
         # Validate all events in file
         file_status = 'PASS'
         fail_reasons = []
+        event_details = []
         
-        for event in events:
+        for i, event in enumerate(events):
             if not isinstance(event, dict):
                 continue
             
             status, issues = validate_event(event, corpus)
+            event_type = f"{event.get('eventSource', '?')}.{event.get('eventName', '?')}"
             
             if status == 'FAIL':
                 file_status = 'FAIL'
@@ -375,17 +393,70 @@ def batch_validate(batch_dir: Path, corpus: Dict[str, Any]):
                 for issue in issues:
                     if issue.startswith('❌'):
                         fail_reasons.append(issue.split(':')[0].replace('❌', '').strip())
+            
+            # Collect details for verbose mode
+            event_details.append({
+                'index': i,
+                'eventType': event_type,
+                'status': status,
+                'issues': issues
+            })
         
         # Output result
-        if file_status == 'PASS':
-            print(f"✅ PASS - {filepath.name}")
-            pass_count += 1
-            results.append({'file': filepath.name, 'status': 'PASS', 'reason': ''})
+        if verbose:
+            # Detailed output
+            print(f"\n{'='*60}")
+            if file_status == 'PASS':
+                print(f"✅ PASS - {filepath.name}")
+            else:
+                print(f"❌ FAIL - {filepath.name}")
+            print(f"{'='*60}")
+            print(f"Events: {len(events)}")
+            
+            # Show each event
+            for detail in event_details:
+                if detail['status'] == 'PASS':
+                    print(f"  Event {detail['index']}: ✅ PASS ({detail['eventType']})")
+                else:
+                    print(f"  Event {detail['index']}: ❌ FAIL ({detail['eventType']})")
+                    for issue in detail['issues']:
+                        print(f"    {issue}")
+            print()
+            
+            # Build markdown section
+            md_status = "✅ PASS" if file_status == 'PASS' else "❌ FAIL"
+            md_section = f"## {md_status} {filepath.name}\n\n"
+            md_section += f"**Events:** {len(events)}  \n"
+            md_section += f"**Status:** {file_status}\n\n"
+            
+            if file_status == 'FAIL':
+                md_section += "### Failed Events\n\n"
+                for detail in event_details:
+                    if detail['status'] == 'FAIL':
+                        md_section += f"**Event {detail['index']}:** `{detail['eventType']}`\n\n"
+                        for issue in detail['issues']:
+                            md_section += f"- {issue}\n"
+                        md_section += "\n"
+            else:
+                md_section += "All events passed validation.\n"
+            
+            md_sections.append(md_section)
         else:
-            reason = ', '.join(set(fail_reasons))
-            print(f"❌ FAIL - {filepath.name}")
+            # Simple PASS/FAIL output
+            if file_status == 'PASS':
+                print(f"✅ PASS - {filepath.name}")
+                pass_count += 1
+                results.append({'file': filepath.name, 'status': 'PASS', 'reason': '', 'details': event_details})
+            else:
+                reason = ', '.join(set(fail_reasons))
+                print(f"❌ FAIL - {filepath.name}")
+                fail_count += 1
+                results.append({'file': filepath.name, 'status': 'FAIL', 'reason': reason, 'details': event_details})
+        
+        if file_status == 'PASS':
+            pass_count += 1
+        else:
             fail_count += 1
-            results.append({'file': filepath.name, 'status': 'FAIL', 'reason': reason})
     
     # Summary
     print(f"\n{'='*60}")
@@ -400,14 +471,32 @@ def batch_validate(batch_dir: Path, corpus: Dict[str, Any]):
     else:
         print(f"\n✅ All files passed validation")
     
-    # Save batch report
+    # Save batch report (CSV)
     import csv
     csv_path = Path('batch_validation_report.csv')
     with open(csv_path, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=['file', 'status', 'reason'])
         writer.writeheader()
-        writer.writerows(results)
-    print(f"\n📄 Batch report saved: {csv_path}")
+        for r in results:
+            writer.writerow({'file': r['file'], 'status': r['status'], 'reason': r['reason']})
+    print(f"\n📄 CSV report saved: {csv_path}")
+    
+    # Save markdown report if verbose
+    if verbose:
+        md_path = Path('batch_validation_report.md')
+        with open(md_path, 'w') as f:
+            f.write(f"# Batch Validation Report\n\n")
+            f.write(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  \n")
+            f.write(f"**Directory:** `{batch_dir}`  \n")
+            f.write(f"**Files Validated:** {len(all_files)}  \n")
+            f.write(f"**Status:** {pass_count} PASS, {fail_count} FAIL\n\n")
+            f.write(f"---\n\n")
+            
+            for section in md_sections:
+                f.write(section)
+                f.write("\n---\n\n")
+        
+        print(f"📄 Markdown report saved: {md_path}")
 
 def main():
     if len(sys.argv) < 2:
@@ -416,7 +505,7 @@ def main():
         print(f"  BUILD:    {sys.argv[0]} --build /path/to/real/logs/")
         print(f"  APPEND:   {sys.argv[0]} --append /path/to/more/logs/")
         print(f"  VALIDATE: {sys.argv[0]} test.json [--csv]")
-        print(f"  BATCH:    {sys.argv[0]} --batch /path/to/test/logs/")
+        print(f"  BATCH:    {sys.argv[0]} --batch /path/to/test/logs/ [--verbose]")
         sys.exit(1)
     
     # Build mode
@@ -459,7 +548,7 @@ def main():
     if sys.argv[1] == '--batch':
         if len(sys.argv) < 3:
             print("❌ Error: --batch requires directory path")
-            print(f"Usage: {sys.argv[0]} --batch /path/to/test/logs/")
+            print(f"Usage: {sys.argv[0]} --batch /path/to/test/logs/ [--verbose]")
             sys.exit(1)
         
         batch_dir = Path(sys.argv[2])
@@ -467,8 +556,9 @@ def main():
             print(f"❌ Error: Directory not found: {batch_dir}")
             sys.exit(1)
         
+        verbose = '--verbose' in sys.argv
         corpus = load_corpus()
-        batch_validate(batch_dir, corpus)
+        batch_validate(batch_dir, corpus, verbose)
         sys.exit(0)
     
     # Validate mode
